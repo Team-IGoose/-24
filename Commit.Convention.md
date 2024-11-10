@@ -41,7 +41,7 @@
 💚 CI 빌드를 고칠 때: ci  
 ⬆️ 종속성을 업그레이드할 때: upgrade  
 ⬇️ 종속성을 다운그레이드할 때: downgrade  
-⏩ 이전 버전/지점에서 기능을 전달할 때: forwardport  
+⏩ 이전 버전/지점에서 기능을 전달할 때: forwardport
 ⏪ 최신 버전/지점에서 기능을 백포트할 때: backport  
 👕 linter/strict/deprecation 경고를 제거할 때: lint  
 ♿️ 접근성을 향상시킬 때: accessibility  
