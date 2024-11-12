@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, MenuItem, IconButton, Box } from '@mui/mat
 import { styled, keyframes } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import images from '../../../common/assets/image/_index';
+import M from '../molecule/_index';
 
 const slideInAnimation = keyframes`
   from {
@@ -23,7 +24,6 @@ const NavLink = styled(Typography)({
   "&::after": {
     content: '""',
     position: "absolute",
-    bottom: "-10px", // 보더를 더 아래로 내려 컨테이너 하단 보더와 가까워지도록 조정
     left: 0,
     width: "0",
     height: "3px",
@@ -54,7 +54,7 @@ const DropdownContainer = styled(Box)({
 const NavbarContainer = styled(AppBar)({
   display: 'flex',
   width: '100%',
-  height: '80px',
+  // height: '80px',
   justifyContent: 'center',
   position: "relative",
   color: "inherit",
@@ -84,7 +84,7 @@ const MenuContainer = styled(Box)({
 });
 
 const personal = {
-  nav: ['취업패키지', '창업패키지', '지역미래', '지역혁신', '지역도약'],
+  menu: ['취업패키지', '창업패키지', '지역미래', '지역혁신', '지역도약'],
   drop: [
     ['미래취업로드맵', '채용종합정보', '지역채용지원서비스', '지역업종분포현황'],
     ['미래창업로드맵', '지역상권분석 서비스', 'K-StartUp 사업공고', '창업교육지원사업', '해외시장진출정보'],
@@ -95,7 +95,7 @@ const personal = {
 };
 
 const company = {
-  nav: ['지역미래분석', '지역인재양성', '기업지원', '지역소통공간', '미래혁신도약정책'],
+  menu: ['지역미래분석', '지역인재양성', '기업지원', '지역소통공간', '미래혁신도약정책'],
   drop: [
     ['지역문제분석', '지역문제해결현황', '지역맞춤형과제추천서비스'],
     ['지역특화 전문인재현황', '지역인재채용'],
@@ -134,26 +134,20 @@ function Name(): JSX.Element {
   };
 
   return (
-    <NavbarContainer onMouseLeave={handleMouseLeaveNavbar}>
+    <NavbarContainer >
       <CenteredToolbar>
-        <LogoContainer onMouseEnter={handleMenuClose}>
-          <img src={images.GOV} alt="Logo" style={{ marginRight: "10px", width: "40px", height: "40px" }} />
-          <Typography variant="h6">미래24 | 경상북도</Typography>
-        </LogoContainer>
-
-        <MenuContainer onMouseEnter={handleMenuOpen}>
-          {data.nav.map((menu) => (
-            <NavLink key={menu}>{menu}</NavLink>
+        <M.Logo location={"대구광역시"} />
+          {data.menu.map((menu) => (
+            <M.Menu menu={menu} />
           ))}
-        </MenuContainer>
 
-        <IconButton edge="end" color="inherit" onMouseEnter={handleMenuClose}>
+        <IconButton edge="end" color="inherit" >
           <MenuIcon />
         </IconButton>
       </CenteredToolbar>
 
       {openDropdown && (
-        <DropdownContainer onMouseLeave={handleMenuClose} onMouseEnter={handleMouseEnterDropdown}>
+        <DropdownContainer onMouseLeave={handleMenuClose} >
           {data.drop.map((menuGroup, index) => (
             <Box key={index} sx={{ width: userType === 'company' ? '160px' : '140px' }}>
               {menuGroup.map((item, idx) => (
