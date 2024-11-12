@@ -1,6 +1,6 @@
-import Name from "./name";
+import Header from "./header/header";
 
 const O = {
-  Name,
+  Header,
 };
 export default O;

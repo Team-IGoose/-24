@@ -3,9 +3,8 @@ import O from "../component/organism/_index";
 function Template(): JSX.Element {
   return (
     <>
-      <O.Name />
-      test
+      <O.Header />
     </>
-  )
+  );
 }
 export default Template;

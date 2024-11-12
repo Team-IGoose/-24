@@ -1,12 +1,10 @@
 import Logo from "./logo/logo";
 import Menu from "./menu/menu";
-import NameButton from "./name.button";
-import NameTextField from "./name.textfield";
+import Type from "./type/type";
 
 const M = {
-  NameTextField,
-  NameButton,
   Logo,
-  Menu
+  Menu,
+  Type,
 };
 export default M;
