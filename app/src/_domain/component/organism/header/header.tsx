@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { AppBar, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -77,20 +77,26 @@ const personal = {
 //   ],
 // };
 
-const UserTypeContainer = styled(Box)({
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "center",
-  paddingLeft: "15rem",
-  height: "3rem",
-  background: "#62D491",
+const TopContainer = styled(Box) ({
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: "7vh",
+    padding: "0 72px",
+    gqp: 2,
+    
 });
+
 
 function Header(): JSX.Element {
   const data = personal;
 
   return (
     <NavbarContainer>
+      <TopContainer>
+        <M.Top/>
+      </TopContainer>
       <M.Type />
       <MenuContainer>
         <M.Logo location={"강원특별자치도"} />
@@ -104,3 +110,5 @@ function Header(): JSX.Element {
 }
 
 export default Header;
+
+
