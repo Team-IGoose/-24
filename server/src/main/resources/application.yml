@@ -4,7 +4,7 @@ spring:
   datasource:
     hikari:
       maximum-pool-size: 4
-    url: jdbc:postgresql://localhost:5432/future24
+    url: jdbc:postgresql://localhost:5432/Future24
     username: postgres
     password: 1234
     driver-class-name: org.postgresql.Driver
@@ -36,4 +36,7 @@ logging:
 #        data: DEBUG
 openApi:
   serviceKey: 8XF02UiqBjMacUjtyAJt3BuzIPOJjO1MCdRSqeekt68l59GJY2unB1%2FFfl%2BQaP49h6fIN8aiNdIXnft2F3YT1w%3D%3D
+
+mybatis:
+  type-aliases-package: com.future24.server.future24.**.vo
 
