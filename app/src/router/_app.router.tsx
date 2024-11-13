@@ -1,7 +1,8 @@
 import { HashRouter, useRoutes } from "react-router-dom";
 import introRoutes from "./introRoutes";
+import authRoutes from "./authRoutes";
 
-const allRoutes = [...introRoutes];
+const allRoutes = [...introRoutes, ...authRoutes];
 
 function RoutesComponent(): JSX.Element {
   const routes = useRoutes(allRoutes)!;
