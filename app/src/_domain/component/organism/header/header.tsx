@@ -1,8 +1,8 @@
-
 import { AppBar, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import M from "../../molecule/_index";
+import { useNavigate } from "react-router-dom";
 
 const NavbarContainer = styled(AppBar)({
   display: "flex",
@@ -26,6 +26,7 @@ const MenuContainer = styled(Box)({
 
 const personal = {
   menu: ["취업패키지", "창업패키지", "지역미래", "지역혁신", "지역도약"],
+  route: ["/intro", "/intro", "/localEduProcess", "/intro", "/intro"],
   drop: [
     [
       "미래취업로드맵",
@@ -80,6 +81,14 @@ const personal = {
 
 function Header(): JSX.Element {
   const data = personal;
+  const navigate = useNavigate();
+
+  const handleMenuClick = (index: number) => {
+    const targetRoute = data.route[index];
+    if (targetRoute) {
+      navigate(targetRoute);
+    }
+  };
 
   return (
     <NavbarContainer>
@@ -87,8 +96,8 @@ function Header(): JSX.Element {
       <M.Type />
       <MenuContainer>
         <M.Logo location={"강원특별자치도"} />
-        {data.menu.map((menu) => (
-          <M.Menu menu={menu} />
+        {data.menu.map((menu, index) => (
+          <M.Menu key={index} menu={menu} onClick={() => handleMenuClick(index)} />
         ))}
         <MenuIcon fontSize="large" sx={{ cursor: "pointer" }} />
       </MenuContainer>
