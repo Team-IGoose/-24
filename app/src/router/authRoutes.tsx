@@ -1,7 +1,7 @@
 import { RouteObject } from "react-router-dom";
-import AuthType from "../_domain/auth/_auth.type.page";
-import AuthPersonal from "../_domain/auth/_auth.personal.page";
-import PersonalLogin from "../_domain/auth/_personal.login.page";
+import AuthType from "../_domain/authType/_auth.type.page";
+import AuthPersonal from "../_domain/authPersonal/_auth.personal.page";
+import PersonalLogin from "../_domain/login/_personal.login.page";
 
 const authRoutes: RouteObject[] = [
   {
