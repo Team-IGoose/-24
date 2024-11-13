@@ -65,7 +65,7 @@ function Template(): JSX.Element {
 
     return (
         <>
-        <O.Name />
+        <O.Header />
         <LoginTypeContainer>
             <ContentContainer>
                 <DescText>로그인 유형을 선택해 주세요</DescText>
@@ -81,6 +81,7 @@ function Template(): JSX.Element {
                 </ButtonContainer>
             </ContentContainer>
         </LoginTypeContainer>
+        <O.Footer />
         </>
     )
 }

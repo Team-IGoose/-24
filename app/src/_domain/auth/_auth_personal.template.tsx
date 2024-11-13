@@ -128,7 +128,7 @@ const SubText = styled('span')({
 function Template(): JSX.Element {
 return (
     <>
-        <O.Name />
+        <O.Header />
         <MainContainer>
             <LoginContainer>
 
@@ -212,6 +212,7 @@ return (
 
             </LoginContainer>
         </MainContainer>
+        <O.Footer />
     </>
 )
 }
