@@ -10,6 +10,7 @@ import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlin
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import CardMembershipOutlinedIcon from "@mui/icons-material/CardMembershipOutlined";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 function SearchBar(): JSX.Element {
   const [searchType, setSearchType] = useState<string>("통합검색");
@@ -219,106 +220,126 @@ function SearchBar(): JSX.Element {
               </Box>
           </Stack>
 
-          {/* 로그인 버튼 */}
-          <Button
-              variant="contained"
-              sx={{
-                  width: "100%", // 너비를 전체 컨테이너에 맞게 설정
-                  display: "flex",
-                  justifyContent: "center", // 수평 중앙 정렬
-                  alignItems: "center", // 수직 중앙 정렬
-                  fontWeight: "900",
-                fontSize: "1.1rem",
-                  marginTop: "1.5rem",
-                  backgroundColor: "#4caf50",
-                  "&:hover": {
-                  backgroundColor: "#43a047",
-                  },
-              }}
-              onClick={()=>{
-                window.location.href = "http://localhost:5173/#AuthPersonal";
-              }}
-              >
-              로그인
-          </Button>
-        </Box>
-
-        {/* 오른쪽 여백 5% */}
-        <Box sx={{ flex: "0 0 5%" }} />
-      </Box>
-
-      {/* 자주 찾는 서비스 섹션 */}
-      <Box
-        sx={{
-          width: "100%",
-          padding: "2rem 0",
-          backgroundColor: "#f9f9f9",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1rem",
-        }}
-      >
-        {/* 제목 섹션 */}
-        <Box sx={{ display: "flex", width: "90%", alignItems: "center" }}>
-          <Typography sx={{ fontSize: "1.5rem", fontWeight: "bold", color: "#333" }}>
-            지역 맞춤 서비스
-          </Typography>
-        </Box>
-
-        {/* 서비스 카드 섹션 */}
-        <Box
-          sx={{
-            width: "90%",
-            display: "flex",
-            alignItems: "center",
-            overflowX: "auto",
-            paddingBottom: "1rem",
-            gap: "2rem",
-          }}
-        >
-          {[
-            { icon: <AssignmentTurnedInOutlinedIcon />},
-            { icon: <SchoolOutlinedIcon />},
-            { icon: <BusinessCenterOutlinedIcon />},
-            { icon: <WorkOutlineOutlinedIcon />},
-            { icon: <CardMembershipOutlinedIcon />},
-          ].map((service, index) => (
-            <Stack
-              key={index}
-              alignItems="center"
-              spacing={1}
-              sx={{
-                minWidth: "120px",
-                padding: "1rem",
-                borderRadius: "50%",
-                backgroundColor: "#ffffff",
-                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <IconButton sx={{ color: "#4caf50", fontSize: "2rem" }}>
-                {service.icon}
-              </IconButton>
-              <Typography sx={{ textAlign: "center", color: "#333", fontSize: "0.9rem" }}>
-                {service.title}
-              </Typography>
-            </Stack>
-          ))}
-
-          {/* 더보기 화살표 */}
-          <IconButton
+        {/* 로그인 버튼 */}
+        <Button
+            variant="contained"
             sx={{
-              color: "#666",
-              minWidth: "auto",
-              padding: "1rem",
+                width: "100%", // 너비를 전체 컨테이너에 맞게 설정
+                display: "flex",
+                justifyContent: "center", // 수평 중앙 정렬
+                alignItems: "center", // 수직 중앙 정렬
+                fontWeight: "900",
+                fontSize: "1.1rem",
+                marginTop: "1.5rem",
+                backgroundColor: "#4caf50",
+                "&:hover": {
+                    backgroundColor: "#43a047",
+                },
             }}
-          >
-            <ArrowForwardIosIcon />
-          </IconButton>
-        </Box>
+            onClick={() =>{
+                window.location.href = "http://localhost:5173/#AuthType";
+            }}
+            >
+                로그인
+        </Button>
+    </Box>
 
-        {/* 페이지 정보 */}
-        <Typography sx={{ color: "#666", fontSize: "0.9rem" }}>1 / 5</Typography>
+            {/* 오른쪽 여백 5% */}
+            <Box sx={{ flex: "0 0 5%" }} />
+                </Box>
+
+            {/* 자주 찾는 서비스 섹션 */}
+            <Box
+                sx={{
+                    width: "100%",
+                    padding: "2rem 0",
+                    backgroundColor: "#f9f9f9",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "1rem",
+                    justifyContent: "center",
+                }}
+            >
+            {/* 제목 섹션 */}
+            <Box sx={{ display: "flex", width: "90%", alignItems: "center", justifyContent: "center" }}>
+                <Typography sx={{ fontSize: "1.7rem", fontWeight: "bold", color: "#333" }}>
+                    지역 맞춤 서비스
+                </Typography>
+            </Box>
+
+            {/* 서비스 카드 섹션 */}
+            <Box
+                sx={{
+                    width: "90%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    overflowX: "auto",
+                    paddingBottom: "1rem",
+                    gap: "2rem",
+                }}
+            >
+                <IconButton
+                    sx={{
+                        color: "#666",
+                        minWidth: "auto",
+                        padding: "1rem",
+                    }}
+                >
+                    <ArrowBackIosIcon />
+                </IconButton>
+                {[
+                    { icon: <AssignmentTurnedInOutlinedIcon sx={{fontSize: "3rem"}} />, label: "신청서 관리" },
+                    { icon: <SchoolOutlinedIcon sx={{fontSize: "3rem"}}/>, label: "교육 및 훈련" },
+                    { icon: <BusinessCenterOutlinedIcon sx={{fontSize: "3rem"}}/>, label: "구직 지원" },
+                    { icon: <WorkOutlineOutlinedIcon sx={{fontSize: "3rem"}}/>, label: "일자리 정보" },
+                    { icon: <CardMembershipOutlinedIcon sx={{fontSize: "3rem"}}/>, label: "회원 혜택" },
+                ].map((service, index) => (
+                <Box
+                    key={index}
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                    }}
+                >
+                    <Stack
+                        alignItems="center"
+                        spacing={1}
+                        sx={{
+                            width: "140px",
+                            height: "140px",
+                            borderRadius: "50%",
+                            backgroundColor: "#ffffff",
+                            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <IconButton sx={{ color: "#4caf50" }}>
+                            {service.icon}
+                        </IconButton>
+                    </Stack>
+                    <Typography sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}>
+                      {service.label}
+                    </Typography>
+                </Box>
+                ))}
+
+            {/* 더보기 화살표 */}
+            <IconButton
+                sx={{
+                    color: "#666",
+                    minWidth: "auto",
+                    padding: "1rem",
+                }}
+                >
+                <ArrowForwardIosIcon />
+            </IconButton>
+        </Box>
       </Box>
     </Box>
   );
