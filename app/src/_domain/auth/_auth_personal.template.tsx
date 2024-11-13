@@ -28,6 +28,18 @@ const NoticeContainer = styled(Box)({
     boxSizing: 'border-box'
 });
 
+const JoinContainer = styled(Box)({
+    width: '100%',
+    padding: '1rem',
+    marginTop: '4rem',
+    borderRadius: '0.8rem',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    backgroundColor: '#e8fcf0',
+    color: '#333333',
+    boxSizing: 'border-box'
+});
+
 const DescText = styled('span')({
     fontSize: '1.6rem',
     fontWeight: 'bold',
@@ -209,6 +221,31 @@ return (
                         <ArrowImage src={images.RArrow} alt="Right Arrow" />
                     </LoginBtn>
                 </BtnGroup>
+
+                <JoinContainer>
+                    <Typography
+                        sx={{
+                            fontSize: '2rem',
+                            marginLeft: '3rem',
+                            marginRight: '1.5rem',
+                            marginTop: '0.6rem',
+                            fontWeight: 'bold',
+                            whiteSpace: 'nowrap',
+                        }}
+                    >
+                        미래24<br />회원가입
+                    </Typography>
+                    <Box display='flex' flexDirection='column'>
+                        <Typography
+                            sx={{
+                                marginTop: '1.2rem',
+                                whiteSpace: 'nowrap'
+                            }}
+                        >
+                            아직 미래24 회원이 아니신가요? 회원가입 하고 지역맞춤형 취업지원 서비스를 편리하게 이용해 보세요.
+                        </Typography>
+                    </Box>
+                </JoinContainer>
 
             </LoginContainer>
         </MainContainer>
