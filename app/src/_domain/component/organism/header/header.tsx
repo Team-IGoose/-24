@@ -14,6 +14,7 @@ const NavbarContainer = styled(AppBar)({
   backgroundColor: "#fff",
   borderBottom: "1px solid #e0e0e0",
   boxShadow: "none",
+  whiteSpace: "nowrap",
 });
 
 const MenuContainer = styled(Box)({
@@ -82,7 +83,7 @@ function Header(): JSX.Element {
 
   return (
     <NavbarContainer>
-        <M.Top/>
+      <M.Top/>
       <M.Type />
       <MenuContainer>
         <M.Logo location={"강원특별자치도"} />
