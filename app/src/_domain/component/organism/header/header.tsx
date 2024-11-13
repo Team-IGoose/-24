@@ -77,26 +77,12 @@ const personal = {
 //   ],
 // };
 
-const TopContainer = styled(Box) ({
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    height: "7vh",
-    padding: "0 72px",
-    gqp: 2,
-    
-});
-
-
 function Header(): JSX.Element {
   const data = personal;
 
   return (
     <NavbarContainer>
-      <TopContainer>
         <M.Top/>
-      </TopContainer>
       <M.Type />
       <MenuContainer>
         <M.Logo location={"강원특별자치도"} />
