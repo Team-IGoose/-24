@@ -2,9 +2,10 @@ import { HashRouter, useRoutes } from "react-router-dom";
 import introRoutes from "./introRoutes";
 import authRoutes from "./authRoutes";
 import testRoutes from "./testRoutes";
-import localFutureRoutes from "./localFutureRoutes"
+import localFutureRoutes from "./localFutureRoutes";
+import roadMap from "./roadMap";
 
-const allRoutes = [...introRoutes, ...authRoutes, ...testRoutes, ...localFutureRoutes];
+const allRoutes = [...introRoutes, ...authRoutes, ...testRoutes, ...localFutureRoutes, ...roadMap];
 
 function RoutesComponent(): JSX.Element {
   const routes = useRoutes(allRoutes)!;
