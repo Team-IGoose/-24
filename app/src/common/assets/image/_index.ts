@@ -12,6 +12,9 @@ import payco from "./login_logo/logo80_80_payco.png"
 import samsungPass from "./login_logo/logo80_80_Samsungpass.png"
 import shinhan from "./login_logo/logo80_80_shinhan.png"
 import toss from "./login_logo/logo80_80_toss.png"
+import daegu from "./Daegu.svg";
+import gangwon from "./Gangwon.svg";
+import gyeongbuk from "./Gyeongbuk.svg";
 
 const images = {
   EG: eg,
@@ -28,5 +31,8 @@ const images = {
   SamsungPass: samsungPass,
   Shinhan: shinhan,
   Toss: toss,
+  DAEGU: daegu,
+  GANGWON: gangwon,
+  GYEONGBUK: gyeongbuk,
 };
 export default images;
