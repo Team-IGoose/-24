@@ -40,6 +40,19 @@ const JoinContainer = styled(Box)({
     boxSizing: 'border-box'
 });
 
+const JoinBtn = styled(Button)({
+    width: '9rem',
+    backgroundColor: '#ffffff',
+    fontSize: '1rem',
+    color: '#000000',
+    fontWeight: 'bold',
+    borderRadius: '1.4rem',
+    marginTop: '0.7rem',
+    marginBottom: '1rem',
+    padding: '0.5rem',
+    border: '1px solid #ccc',
+});
+
 const DescText = styled('span')({
     fontSize: '1.6rem',
     fontWeight: 'bold',
@@ -225,7 +238,7 @@ return (
                 <JoinContainer>
                     <Typography
                         sx={{
-                            fontSize: '2rem',
+                            fontSize: '2.3rem',
                             marginLeft: '3rem',
                             marginRight: '1.5rem',
                             marginTop: '0.6rem',
@@ -239,11 +252,32 @@ return (
                         <Typography
                             sx={{
                                 marginTop: '1.2rem',
-                                whiteSpace: 'nowrap'
                             }}
                         >
                             아직 미래24 회원이 아니신가요? 회원가입 하고 지역맞춤형 취업지원 서비스를 편리하게 이용해 보세요.
                         </Typography>
+                        <Typography
+                            sx={{
+                                marginTop: '0.7rem',
+                                marginBottom: '0.5rem',
+                                fontSize: '0.8rem',
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            개인회원 주요 서비스 안내
+                        </Typography>
+                        <List
+                            sx={{
+                                display: 'flex',
+                                gap: '1.8rem',
+                                listStyle: 'none',
+                            }}
+                        >
+                            <ListItem sx={{ fontSize: '0.8rem' }}>미래 취업/창업 로드맵 제공</ListItem>
+                            <ListItem sx={{ fontSize: '0.8rem' }}>지역 인재 교육과정</ListItem>
+                            <ListItem sx={{ fontSize: '0.8rem' }}>지역 소통 커뮤니티 등</ListItem>
+                        </List>
+                        <JoinBtn>회원가입 하기</JoinBtn>
                     </Box>
                 </JoinContainer>
 
