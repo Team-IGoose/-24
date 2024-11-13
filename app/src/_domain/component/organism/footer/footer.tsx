@@ -4,13 +4,39 @@ import Gangwon from "../../../../common/assets/image/Gangwon.svg";
 
 function Footer(): JSX.Element {
     return (
-        <Box>
+        <Box
+            sx={{
+                height: "100vh", // 전체 화면 높이를 차지하도록 설정
+                overflow: "auto", // 화면 높이를 초과하는 내용에 대해 스크롤 생성
+                display: "flex",
+                flexDirection: "column",
+            }}
+        >
+            {/* 콘텐츠 영역 */}
+            <Box sx={{ flex: 1 }}>
+                {/* 주요 콘텐츠 (스크롤을 적용하고자 하는 영역) */}
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column", // 세로 정렬
+                        padding: "2rem",
+                        gap: "1.5rem",
+                        overflowY: "auto", // 수직 스크롤 추가
+                    }}
+                >
+                    {/* 필요한 컨텐츠를 이곳에 추가 */}
+                    {/* <Typography sx={{ color: "#333", fontSize: "1rem" }}>
+                    </Typography> */}
+                    {/* 스크롤이 필요한 내용 추가 */}
+                </Box>
+            </Box>
+
+            {/* 푸터 영역 */}
             <Box
                 sx={{
-                    display: "flex",
-                    flexDirection: "column", // 세로 정렬
                     width: "100%",
                     backgroundColor: "#f9f9f9", // 전체 배경 색상
+                    borderTop: "1px solid #ddd", // 상단 경계선
                 }}
             >
                 {/* 로고와 텍스트 섹션 */}
