@@ -1,5 +1,6 @@
 import { Box, Button, styled } from "@mui/material";
 import O from "../component/organism/_index";
+import { useNavigate } from "react-router-dom";
 
 const LoginTypeContainer = styled(Box)({
     display: 'flex',
@@ -62,6 +63,7 @@ const SubText = styled('span')({
 
 
 function Template(): JSX.Element {
+    const navigate = useNavigate();
 
     return (
         <>
@@ -70,7 +72,10 @@ function Template(): JSX.Element {
             <ContentContainer>
                 <DescText>로그인 유형을 선택해 주세요</DescText>
                 <ButtonContainer>
-                    <LoginTypeBtn bgColor='#62D491'>
+                    <LoginTypeBtn
+                        bgColor='#62D491'
+                        onClick={() => navigate('/authPersonal')}
+                    >
                         <MainText>개인</MainText>
                         <SubText>로그인</SubText>
                     </LoginTypeBtn>
