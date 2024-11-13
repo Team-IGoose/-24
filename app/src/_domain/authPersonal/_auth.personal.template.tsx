@@ -257,7 +257,7 @@ function Template(): JSX.Element {
                                     marginTop: '1.2rem',
                                 }}
                             >
-                                아직 미래24 회원이 아니신가요? 회원가입 하고 지역맞춤형 취업지원 서비스를 편리하게 이용해 보세요.
+                                아직 미래24 회원이 아니신가요? 회원가입 하고 지역맞춤형 취/창업지원 서비스를 편리하게 이용해 보세요.
                             </Typography>
                             <Typography
                                 sx={{
