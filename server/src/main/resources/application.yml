@@ -21,11 +21,11 @@ spring:
     redis:
       host: localhost
       port: 6379
-jwt:
-  secret: k8V33RnESVDia+zzbb6nxAEap235hBDDeiHNug7byPog5M6tDX/20zKieRh63pGFskudazOBnrIpy5e3DPEa5w==
-  access-token-expiration: 600000 # 10?
-  refresh-token-expiration: 1209600000  # 2?
-  email-token-expiration: 300000  # 5?
+#jwt:
+#  secret: k8V33RnESVDia+zzbb6nxAEap235hBDDeiHNug7byPog5M6tDX/20zKieRh63pGFskudazOBnrIpy5e3DPEa5w==
+#  access-token-expiration: 600000 # 10?
+#  refresh-token-expiration: 1209600000  # 2?
+#  email-token-expiration: 300000  # 5?
 
 logging:
   level:
@@ -34,5 +34,6 @@ logging:
 #      hibernate: DEBUG
 #      springframework:
 #        data: DEBUG
-
+openApi:
+  serviceKey: 8XF02UiqBjMacUjtyAJt3BuzIPOJjO1MCdRSqeekt68l59GJY2unB1%2FFfl%2BQaP49h6fIN8aiNdIXnft2F3YT1w%3D%3D
 
