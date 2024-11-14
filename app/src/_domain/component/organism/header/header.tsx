@@ -26,7 +26,7 @@ const MenuContainer = styled(Box)({
 
 const personal = {
   menu: ["취업패키지", "창업패키지", "지역미래", "지역혁신", "지역도약"],
-  route: ["/intro", "/intro", "/localFutureInfo", "/localPledge", "/intro"],
+  route: ["/intro", "/intro", "/localFutureInfo", "/localInnovationInfo", "/intro"],
   drop: [
     [
       "미래취업로드맵",
