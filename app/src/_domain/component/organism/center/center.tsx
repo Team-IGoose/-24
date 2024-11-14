@@ -13,7 +13,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 function SearchBar(): JSX.Element {
-  const [searchType, setSearchType] = useState<string>("통합검색");
+  const [searchType, setSearchType] = useState<string>("개인");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
@@ -76,11 +76,11 @@ function SearchBar(): JSX.Element {
                     backgroundColor: "transparent",
                     border: "none",
                     "&:hover": {
-                      backgroundColor: "transparent",
+                      backgroundColor: "#e8f5e9",
                     },
                   },
                   "&:hover": {
-                    backgroundColor: "transparent",
+                    backgroundColor: "#e8f5e9",
                     border: "none",
                   },
                   "&.Mui-focusVisible": {
@@ -117,6 +117,9 @@ function SearchBar(): JSX.Element {
                 color: "#333",
                 fontWeight: "bold",
                 marginRight: "1rem",
+                "&:hover": {
+                  backgroundColor: "#e8f5e9",
+                },
               }}
             >
               {selectedCategory} ▼
@@ -143,7 +146,15 @@ function SearchBar(): JSX.Element {
                 marginRight: "1rem",
               }}
             />
-            <Button sx={{ minWidth: "auto", padding: "0.5rem" }}>
+            <Button
+              sx={{
+                minWidth: "auto",
+                padding: "0.5rem",
+                "&:hover": {
+                  backgroundColor: "#e8f5e9",
+                },
+              }}
+            >
               <SearchIcon sx={{ color: "#333", fontSize: "1.5rem" }} />
             </Button>
           </Box>
@@ -184,6 +195,10 @@ function SearchBar(): JSX.Element {
             borderRadius: "0.5rem",
             padding: "1.5rem",
             backgroundColor: "#f9f9f9",
+            transition: "box-shadow 0.3s ease",
+            "&:hover": {
+              boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+            },
           }}
         >
           <Typography
@@ -285,6 +300,9 @@ function SearchBar(): JSX.Element {
                         color: "#666",
                         minWidth: "auto",
                         padding: "1rem",
+                        "&:hover": {
+                          color: "#4caf50",
+                        },
                     }}
                 >
                     <ArrowBackIosIcon />
@@ -303,6 +321,15 @@ function SearchBar(): JSX.Element {
                         flexDirection: "column",
                         alignItems: "center",
                         gap: "0.5rem",
+                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                        "&:hover": {
+                          transform: "scale(1.05)",
+                          boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+                        },
+                        cursor: "pointer",
+                        "&:active": {
+                          transform: "scale(0.95)",
+                        },
                     }}
                 >
                     <Stack
@@ -317,6 +344,10 @@ function SearchBar(): JSX.Element {
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            transition: "background-color 0.3s ease",
+                            "&:hover": {
+                              backgroundColor: "#e8f5e9",
+                            },
                         }}
                     >
                         <IconButton sx={{ color: "#4caf50" }}>
@@ -335,10 +366,338 @@ function SearchBar(): JSX.Element {
                     color: "#666",
                     minWidth: "auto",
                     padding: "1rem",
+                    "&:hover": {
+                      color: "#4caf50",
+                    },
                 }}
                 >
                 <ArrowForwardIosIcon />
             </IconButton>
+        </Box>
+      </Box>
+
+      {/* 지원 제도 섹션 */}
+      <Box
+        sx={{
+          width: "100%",
+          padding: "2rem 0",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "1rem",
+        }}
+      >
+
+        {/* 제목 섹션 */}
+        <Box sx={{ display: "flex", width: "90%", alignItems: "center" }}>
+          <Typography sx={{ fontSize: "2rem", fontWeight: "bold", color: "#333" }}>
+            지원 제도
+          </Typography>
+        </Box>
+        <Box>
+            <Typography sx={{ fontSize: "1rem", fontWeight: "bold", color: "#333" }}>
+                취업과 관련한 다양한 지원 제도를 소개해 드려요. 아래에서 궁금하신 주제를 클릭해 주세요.
+            </Typography>
+        </Box>
+        
+
+        <ToggleButtonGroup
+            value={searchType}
+            exclusive
+            onChange={handleSearchTypeChange}
+            sx={{ justifyContent: "flex-start", marginLeft: "11rem",width: "100%" }}
+          >
+            {["개인", "기업"].map((type) => (
+              <ToggleButton
+                key={type}
+                value={type}
+                sx={{  
+                  fontSize: "1.4rem",
+                  textTransform: "none",
+                  fontWeight: searchType === type ? "bold" : "normal",
+                  color: searchType === type ? "#4caf50" : "#666",
+                  border: "none",
+                  "&.Mui-selected": {
+                    color: "#4caf50",
+                    backgroundColor: "transparent",
+                    border: "none",
+                    "&:hover": {
+                      backgroundColor: "#e8f5e9",
+                    },
+                  },
+                  "&:hover": {
+                    backgroundColor: "#e8f5e9",
+                    border: "none",
+                  },
+                  "&.Mui-focusVisible": {
+                    outline: "none",
+                    border: "none",
+                  },
+                  "&:focus": {
+                    outline: "none",
+                    boxShadow: "none",
+                  },
+                }}
+              >
+                {type}
+              </ToggleButton>
+            ))}
+          </ToggleButtonGroup>
+
+        {/* 카드 섹션 */}
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "1.5rem",
+            width: "90%",
+          }}
+        >
+          {(searchType === "개인" ? [
+            {
+              title: "취업은 하고 싶은데, 어떻게 해야 할지 모르겠어요",
+              description: "기초 취업능력 키우기, 1:1 상담, 나에게 맞는 지원 추천 등",
+              backgroundColor: "#cfe2ff",
+            },
+            {
+              title: "취업하기 위해 공부하거나 자격증을 따고 싶어요",
+              description: "취업과 이직에 도움이 되는 교육 / 훈련 받기",
+              backgroundColor: "#e6f7e5",
+            },
+            {
+              title: "내게 맞는 일자리를 찾고 싶어요",
+              description: "일자리 추천, 다양한 일 경험, 취업지원금 등",
+              backgroundColor: "#fdeee8",
+            },
+            {
+              title: "출산/육아를 위해 일을 쉬거나 근무 시간을 줄여야 할 것 같아요",
+              description: "출산(유산, 사산 포함) 급여, 육아휴직, 육아기 근로시간 단축 등",
+              backgroundColor: "#d7e9ff",
+            },
+            {
+              title: "최근에 어쩔 수 없이 퇴사했어요. 조만간 퇴사할 것 같아요",
+              description: "실업급여, 재취업 수당 등",
+              backgroundColor: "#e6f7e5",
+            },
+            {
+              title: "나이는 좀 있지만, 다시 취업을 하고 싶습니다",
+              description: "경력직을 위한 경력설계 컨설팅, 공공 일자리, 취업 지원금, 취업 능력 키우기 등",
+              backgroundColor: "#fdeee8",
+            },
+            {
+              title: "전 장애가 있는데, 어떤 도움을 받을 수 있을까요?",
+              description: "장애인의 취업을 위한 단계별 통합 지원 프로그램, 교육/훈련 등",
+              backgroundColor: "#d7e9ff",
+            },
+            {
+                title: "취업은 하고 싶은데, 어떻게 해야 할지 모르겠어요",
+                description: "기초 취업능력 키우기, 1:1 상담, 나에게 맞는 지원 추천 등",
+                backgroundColor: "#cfe2ff",
+              },
+              {
+                title: "취업하기 위해 공부하거나 자격증을 따고 싶어요",
+                description: "취업과 이직에 도움이 되는 교육 / 훈련 받기",
+                backgroundColor: "#e6f7e5",
+              },
+              {
+                title: "내게 맞는 일자리를 찾고 싶어요",
+                description: "일자리 추천, 다양한 일 경험, 취업지원금 등",
+                backgroundColor: "#fdeee8",
+              },
+              {
+                title: "출산/육아를 위해 일을 쉬거나 근무 시간을 줄여야 할 것 같아요",
+                description: "출산(유산, 사산 포함) 급여, 육아휴직, 육아기 근로시간 단축 등",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "최근에 어쩔 수 없이 퇴사했어요. 조만간 퇴사할 것 같아요",
+                description: "실업급여, 재취업 수당 등",
+                backgroundColor: "#e6f7e5",
+              },
+              {
+                title: "나이는 좀 있지만, 다시 취업을 하고 싶습니다",
+                description: "경력직을 위한 경력설계 컨설팅, 공공 일자리, 취업 지원금, 취업 능력 키우기 등",
+                backgroundColor: "#fdeee8",
+              },
+              {
+                title: "전 장애가 있는데, 어떤 도움을 받을 수 있을까요?",
+                description: "장애인의 취업을 위한 단계별 통합 지원 프로그램, 교육/훈련 등",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "취업은 하고 싶은데, 어떻게 해야 할지 모르겠어요",
+                description: "기초 취업능력 키우기, 1:1 상담, 나에게 맞는 지원 추천 등",
+                backgroundColor: "#cfe2ff",
+              },
+              {
+                title: "취업하기 위해 공부하거나 자격증을 따고 싶어요",
+                description: "취업과 이직에 도움이 되는 교육 / 훈련 받기",
+                backgroundColor: "#e6f7e5",
+              },
+              {
+                title: "내게 맞는 일자리를 찾고 싶어요",
+                description: "일자리 추천, 다양한 일 경험, 취업지원금 등",
+                backgroundColor: "#fdeee8",
+              },
+              {
+                title: "출산/육아를 위해 일을 쉬거나 근무 시간을 줄여야 할 것 같아요",
+                description: "출산(유산, 사산 포함) 급여, 육아휴직, 육아기 근로시간 단축 등",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "최근에 어쩔 수 없이 퇴사했어요. 조만간 퇴사할 것 같아요",
+                description: "실업급여, 재취업 수당 등",
+                backgroundColor: "#e6f7e5",
+              },
+
+            {
+              title: "기타 제도",
+              description: "고용보험 등 고용 관련 기업의 의무와 알아두면 좋은 다양한 제도",
+              backgroundColor: "#e6f7e5",
+            },
+          ] : [
+            {
+              title: "채 용",
+              description: "다양한 채용 지원금과 채용 서비스, 일 경험 프로그램 등",
+              backgroundColor: "#cfe2ff",
+            },
+            {
+              title: "교육/훈련",
+              description: "채용 예정이거나 이미 근무 중인 직원의 직무능력 향상을 위한 지원",
+              backgroundColor: "#e6f7e5",
+            },
+            {
+              title: "출산/육아",
+              description: "출산휴가, 육아휴직, 육아를 위한 근로시간 단축을 부여한 기업에 대한 지원",
+              backgroundColor: "#fdeee8",
+            },
+            {
+              title: "유연 근무",
+              description: "근로시간 단축, 원격 근무 등 유연하고 스마트하게 일하는 기업을 위한 지원",
+              backgroundColor: "#d7e9ff",
+            },
+            {
+              title: "고용 유지",
+              description: "어려운 회사사정에도 불구하고 직원의 고용유지를 위해 노력한 기업을 위한 지원",
+              backgroundColor: "#e6f7e5",
+            },
+            {
+              title: "재취업 지원",
+              description: "직원의 재취업을 지원하는 제도 - 중장년 내일센터, 생애경력설계, 새출발크레딧 등",
+              backgroundColor: "#fdeee8",
+            },
+            {
+              title: "장애인 고용",
+              description: "장애인을 채용했거나, 채용하기 위해 노력한 기업을 위한 지원",
+              backgroundColor: "#d7e9ff",
+            },
+            {
+              title: "외국인 고용",
+              description: "내국인 채용을 위해 노력했으나 채용하지 못한 기업을 위한 고용허가제(사업주) 지원",
+              backgroundColor: "#e6f7e5",
+            },
+            {
+                title: "유연 근무",
+                description: "근로시간 단축, 원격 근무 등 유연하고 스마트하게 일하는 기업을 위한 지원",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "고용 유지",
+                description: "어려운 회사사정에도 불구하고 직원의 고용유지를 위해 노력한 기업을 위한 지원",
+                backgroundColor: "#e6f7e5",
+              },
+              {
+                title: "재취업 지원",
+                description: "직원의 재취업을 지원하는 제도 - 중장년 내일센터, 생애경력설계, 새출발크레딧 등",
+                backgroundColor: "#fdeee8",
+              },
+              {
+                title: "장애인 고용",
+                description: "장애인을 채용했거나, 채용하기 위해 노력한 기업을 위한 지원",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "외국인 고용",
+                description: "내국인 채용을 위해 노력했으나 채용하지 못한 기업을 위한 고용허가제(사업주) 지원",
+                backgroundColor: "#e6f7e5",
+              },
+              {
+                title: "유연 근무",
+                description: "근로시간 단축, 원격 근무 등 유연하고 스마트하게 일하는 기업을 위한 지원",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "고용 유지",
+                description: "어려운 회사사정에도 불구하고 직원의 고용유지를 위해 노력한 기업을 위한 지원",
+                backgroundColor: "#e6f7e5",
+              },
+              {
+                title: "재취업 지원",
+                description: "직원의 재취업을 지원하는 제도 - 중장년 내일센터, 생애경력설계, 새출발크레딧 등",
+                backgroundColor: "#fdeee8",
+              },
+              {
+                title: "장애인 고용",
+                description: "장애인을 채용했거나, 채용하기 위해 노력한 기업을 위한 지원",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "외국인 고용",
+                description: "내국인 채용을 위해 노력했으나 채용하지 못한 기업을 위한 고용허가제(사업주) 지원",
+                backgroundColor: "#e6f7e5",
+              },
+              {
+                title: "유연 근무",
+                description: "근로시간 단축, 원격 근무 등 유연하고 스마트하게 일하는 기업을 위한 지원",
+                backgroundColor: "#d7e9ff",
+              },
+              {
+                title: "고용 유지",
+                description: "어려운 회사사정에도 불구하고 직원의 고용유지를 위해 노력한 기업을 위한 지원",
+                backgroundColor: "#e6f7e5",
+              },
+        
+          ]).map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                padding: "1.5rem",
+                borderRadius: "0.5rem",
+                backgroundColor: item.backgroundColor,
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                  boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+                },
+                cursor: "pointer",
+                "&:active": {
+                  transform: "scale(0.95)",
+                },
+              }}
+            >
+              <Typography sx={{ fontWeight: "bold", fontSize: "1rem", marginBottom: "0.5rem" }}>
+                {item.title}
+              </Typography>
+              <Typography sx={{ fontSize: "0.9rem", color: "#555" }}>
+                {item.description}
+              </Typography>
+              <Button
+                variant="text"
+                sx={{
+                  marginTop: "1rem",
+                  color: "#333",
+                  textTransform: "none",
+                  fontWeight: "bold",
+                  "&:hover": {
+                    textDecoration: "underline",
+                    backgroundColor: "transparent",
+                  },
+                }}
+              >
+                자세히 보기
+              </Button>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Box>
