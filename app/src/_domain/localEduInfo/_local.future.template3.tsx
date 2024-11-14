@@ -69,14 +69,14 @@ function Template(): JSX.Element {
                         <MenuContainer>
                             <MenuText>지역미래</MenuText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localEduProcess")}}>
-                                <span>-</span>
-                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>지역인재교육과정</span>
-                            </ItemText>
+                            <ItemText onClick={() => {navigate("/localEduProcess")}}>-지역인재교육과정</ItemText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/femaleSupport")}}>-경력단절여성취업지원</ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localEduInfo")}}>-내지역교육현황정보</ItemText>
+                            <ItemText onClick={() => {navigate("/localEduInfo")}}>
+                                <span>-</span>
+                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>내지역교육현황정보</span>
+                            </ItemText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/youthPolicy")}}>-청소년지원현황</ItemText>
                             <Divider />
