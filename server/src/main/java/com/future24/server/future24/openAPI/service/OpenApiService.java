@@ -38,6 +38,6 @@ public class OpenApiService {
                 .bodyToMono(String.class)
                 .doOnNext(response -> System.out.println("Response: " + response))
                 .block();
-    }   
+    }
 
 }
