@@ -90,32 +90,33 @@ const steps = [
     {
         label: (
             <span>
-            <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#fccc00' }}>
-                지역미래
+            <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#fc4700' }}>
+                지역혁신
             </span>
-            란 무엇인가요?
+            이란 무엇인가요?
             </span>
         ),
-        description: `자녀 교육과 육아 지원을 위한 공공데이터 및 청소년 정책 정보를 제공해 육아 부담을 낮추고, 경력단절 여성의 재취업을 돕는 데이터를 활용해 경력 손실을 최소화하여 사회 복귀를 지원합니다.
+        description: `지역기업 분석정보와 중소기업지원사업 현황 정보 제공을 통해 지역 기업의 발전 가능성 현황을 보여주고 지역의 핵심 가치를 공유합니다.
+                    지역발전공약현황 및 지역특색사업현황 정보를 제공하여 지역이 가진 경쟁력을 알리고 앞으로 어떤 로드맵을 그리고 있는지 공유합니다.
 
-                    • 초등학교부터 대학교까지 지역 맞춤형 교육커리큘럼 제공
-                    • 출산경력단절 여성 케어
-                    • 우리아이 지원 정책 정보 제공`,
+                    •지역발전 혁신공약 현황 정보 제공
+                    •지역특색관광사업 개발
+                    •지역기업 분석 및 지역 내 중소기업 지원사업현황 진행 정보 제공`,
     },
     {
-        label: '지역인재교육과정',
+        label: '지역발전공약현황',
         description: '대충 해당 페이지에 대한 설명',
     },
     {
-        label: '경력단절여성취업지원',
+        label: '지역특색관광사업',
         description:'대충 해당 페이지에 대한 설명',
     },
     {
-        label: '내지역교육현황정보',
+        label: '지역기업분석정보',
         description:'대충 해당 페이지에 대한 설명',
     },
     {
-        label: '청소년지원현황',
+        label: '중소기업지원사업현황',
         description:'대충 해당 페이지에 대한 설명',
     },
   ];
@@ -144,20 +145,20 @@ function Template(): JSX.Element {
                     <Box display='flex' flexDirection='row'>
                         {/* 메뉴 영역 */}
                         <MenuContainer>
-                            <MenuText>지역미래</MenuText>
+                            <MenuText>지역혁신</MenuText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/localFutureInfo")}}>
                                 <span>-</span>
-                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>About지역미래</span>
+                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>About지역혁신</span>
                             </ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localEduProcess")}}>-지역인재교육과정</ItemText>
+                            <ItemText onClick={() => {navigate("/localPledge")}}>-지역발전공약현황</ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/femaleSupport")}}>-경력단절여성취업지원</ItemText>
+                            <ItemText onClick={() => {navigate("/localTourism")}}>-지역특색관광사업</ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localEduInfo")}}>-내지역교육현황정보</ItemText>
+                            <ItemText onClick={() => {navigate("/localEnterpriseInfo")}}>-지역기업분석정보</ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/youthPolicy")}}>-청소년지원현황</ItemText>
+                            <ItemText onClick={() => {navigate("/enterpriseSupport")}}>-중소기업지원사업현황</ItemText>
                             <Divider />
                         </MenuContainer>
                         

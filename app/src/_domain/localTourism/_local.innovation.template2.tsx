@@ -73,12 +73,12 @@ function Template(): JSX.Element {
                             <Divider />
                             <ItemText onClick={() => {navigate("/localInnovationInfo")}}>-About지역혁신</ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localPledge")}}>
-                                <span>-</span>
-                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>지역발전공약현황</span>
-                            </ItemText>
+                            <ItemText onClick={() => {navigate("/localPledge")}}>-지역발전공약현황</ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localTourism")}}>-지역특색관광사업</ItemText>
+                            <ItemText onClick={() => {navigate("/localTourism")}}>
+                                <span>-</span>
+                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>지역특색관광사업</span>
+                            </ItemText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/localEnterpriseInfo")}}>-지역기업분석정보</ItemText>
                             <Divider />

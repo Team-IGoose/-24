@@ -33,6 +33,8 @@ const ContentContainer = styled(Box)({
     width: '100%',
     height: '100%',
     display: 'flex',
+    alignItems: 'flex-start',
+    paddingLeft: '4rem',
     color: '#000000',
     flexDirection: 'column',
     boxSizing: 'border-box',
