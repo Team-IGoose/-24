@@ -7,7 +7,11 @@ type LogoProps = {
 
 function Logo({ location }: LogoProps): JSX.Element {
   return (
-    <S.Container>
+    <S.Container
+      onClick={() => {
+        window.location.href = "http://localhost:5173/#intro";
+      }}
+    >
       <S.LogoImage src={images.GOV} />
       <S.LogoText variant="h5">
         {"미래24" + (location.length != 0 ? " | " + location : "")}
