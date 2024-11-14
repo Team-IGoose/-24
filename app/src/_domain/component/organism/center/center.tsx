@@ -23,8 +23,12 @@ import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import CardMembershipOutlinedIcon from "@mui/icons-material/CardMembershipOutlined";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../common/feature/store";
 
 function SearchBar(): JSX.Element {
+  const authState = useSelector((state: RootState) => state.auth.state);
+
   const [searchType, setSearchType] = useState<string>("개인");
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -74,6 +78,21 @@ function SearchBar(): JSX.Element {
             gap: "1rem",
           }}
         >
+          {authState && (
+            <Box
+              sx={{
+                display: "flex",
+                fontSize: "2.1rem",
+                fontWeight: "bold",
+              }}
+            >
+              이곳은&nbsp;
+              <Box sx={{ color: "#ee2346", textDecoration: "underline" }}>
+                강원특별자치도
+              </Box>
+              &nbsp; 미래혁신도약 정책 1페이지입니다.
+            </Box>
+          )}
           {/* 검색 타입 선택 버튼 */}
           <ToggleButtonGroup
             value={searchType}

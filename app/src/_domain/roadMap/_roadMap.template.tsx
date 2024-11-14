@@ -1,16 +1,17 @@
-
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import O from "../component/organism/_index";
 import Subject from "../component/molecule/roadMap/subject/subject";
 import Content from "../component/molecule/roadMap/content/content";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
 const roadMapData = [
   { title: "직무 선택", content: "직무 선택에 대한 내용입니다." },
   { title: "대학 추천", content: "대학 추천에 대한 내용입니다." },
-  { title: "일자리 플러스 센터", content: "일자리 플러스 센터에 대한 내용입니다." },
+  {
+    title: "일자리 플러스 센터",
+    content: "일자리 플러스 센터에 대한 내용입니다.",
+  },
   { title: "국가취업지원제도", content: "국가취업지원제도에 대한 내용입니다." },
   { title: "일자리 소개", content: "일자리 소개에 대한 내용입니다." },
   { title: "지원 하기", content: "지원하기에 대한 내용입니다." },
@@ -37,12 +38,13 @@ function Template(): JSX.Element {
   };
 
   // 체크박스 상태 변경 핸들러
-  const handleCheckboxChange = (name: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCheckboxes((prev) => ({
-      ...prev,
-      [name]: event.target.checked,
-    }));
-  };
+  const handleCheckboxChange =
+    (name: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      setCheckboxes((prev) => ({
+        ...prev,
+        [name]: event.target.checked,
+      }));
+    };
 
   // "대학 추천"이 선택되었을 때 대학 정보 가져오기
   useEffect(() => {
@@ -62,7 +64,6 @@ function Template(): JSX.Element {
       console.error("Error fetching university data:", error);
     }
   };
-
 
   return (
     <>
@@ -86,9 +87,7 @@ function Template(): JSX.Element {
             {index + 1}. {item.title}
           </Subject>
         ))}
-
       </Box>
-      
 
       {/* 내용 표시 박스 */}
       <Content
@@ -110,8 +109,12 @@ function Template(): JSX.Element {
           marginY: 2,
         }}
       >
-        <Typography variant="h4" color="black">로드맵 내용</Typography>
-        <Typography color="black">여기에 로드맵의 세부 내용이 표시됩니다.</Typography>
+        <Typography variant="h4" color="black">
+          로드맵 내용
+        </Typography>
+        <Typography color="black">
+          여기에 로드맵의 세부 내용이 표시됩니다.
+        </Typography>
       </Box>
 
       {/* 하단 페이지 네비게이션 */}
@@ -127,7 +130,6 @@ function Template(): JSX.Element {
           이전
         </Button>
         <Button variant="outlined" color="primary" onClick={handleNext}>
-        <Button variant="outlined" color="primary">
           이전
         </Button>
         <Button variant="outlined" color="primary">

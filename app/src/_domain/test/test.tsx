@@ -10,7 +10,10 @@ function Test(): JSX.Element {
       };
 
       // POST 요청
-      const response = await axios.post("http://localhost:8080/api/major", data);
+      const response = await axios.post(
+        "http://localhost:8080/api/major",
+        data
+      );
       console.log("Response:", response.data);
     } catch (error) {
       console.error("Error:", error);
@@ -20,11 +23,11 @@ function Test(): JSX.Element {
   return <Button onClick={request}>test</Button>;
 }
 
-    await axios.get(
-      "http://localhost:8080/api/data?ability=R7000&workRgn=R3000"
-    );
-  }
+//     await axios.get(
+//       "http://localhost:8080/api/data?ability=R7000&workRgn=R3000"
+//     );
+//   }
 
-  return <Button onProgress={request}>test</Button>;
-}
+//   return <Button onProgress={request}>test</Button>;
+// }
 export default Test;

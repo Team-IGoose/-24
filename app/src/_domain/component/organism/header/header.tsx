@@ -3,6 +3,8 @@ import { styled } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import M from "../../molecule/_index";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../common/feature/store";
 
 const NavbarContainer = styled(AppBar)({
   display: "flex",
@@ -82,6 +84,7 @@ const personal = {
 function Header(): JSX.Element {
   const data = personal;
   const navigate = useNavigate();
+  const authState = useSelector((state: RootState) => state.auth.state);
 
   const handleMenuClick = (index: number) => {
     const targetRoute = data.route[index];
