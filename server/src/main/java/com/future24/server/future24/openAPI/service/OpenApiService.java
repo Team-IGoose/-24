@@ -72,4 +72,4 @@ public class OpenApiService {
                 .doOnNext(response -> System.out.println("Response: " + response))
                 .block();
     }
-}
+

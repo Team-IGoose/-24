@@ -1,5 +1,6 @@
 package com.future24.server.future24.univercity.mapper;
 
+
 import com.future24.server.future24.univercity.vo.UnivercityVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -14,4 +15,5 @@ public interface UnivercityMapper {
     List<UnivercityVO> findByUniverse(
             String startValue
     );
+
 }

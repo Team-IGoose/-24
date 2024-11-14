@@ -1,5 +1,4 @@
-package com.future24.server.future24.univercity.vo;
-
+package com.future24.server.future24.univercity.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,6 +9,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UnivercityVO {
-
+public class UnivercityRquest {
+    private String startValue;
 }
