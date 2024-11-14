@@ -44,7 +44,7 @@ const MenuText = styled('span')({
     fontWeight: 'bold',
     color: '#000000',
     margin: '1rem 0',
-    marginBottom: '2rem',
+    marginBottom: '1rem',
 });
 
 const ItemText = styled('span')({
@@ -68,6 +68,8 @@ function Template(): JSX.Element {
                         {/* 메뉴 영역 */}
                         <MenuContainer>
                             <MenuText>지역미래</MenuText>
+                            <Divider />
+                            <ItemText onClick={() => {navigate("/localFutureInfo")}}>-About지역미래</ItemText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/localEduProcess")}}>-지역인재교육과정</ItemText>
                             <Divider />

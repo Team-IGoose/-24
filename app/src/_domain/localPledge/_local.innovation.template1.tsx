@@ -67,20 +67,18 @@ function Template(): JSX.Element {
                     <Box display='flex' flexDirection='row'>
                         {/* 메뉴 영역 */}
                         <MenuContainer>
-                            <MenuText>지역미래</MenuText>
+                            <MenuText>지역혁신</MenuText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localFutureInfo")}}>-About지역미래</ItemText>
-                            <Divider />
-                            <ItemText onClick={() => {navigate("/localEduProcess")}}>-지역인재교육과정</ItemText>
-                            <Divider />
-                            <ItemText onClick={() => {navigate("/femaleSupport")}}>-경력단절여성취업지원</ItemText>
-                            <Divider />
-                            <ItemText onClick={() => {navigate("/localEduInfo")}}>
+                            <ItemText onClick={() => {navigate("/localPledge")}}>
                                 <span>-</span>
-                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>내지역교육현황정보</span>
+                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>지역발전공약현황</span>
                             </ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/youthPolicy")}}>-청소년지원현황</ItemText>
+                            <ItemText onClick={() => {navigate("/localTourism")}}>-지역특색관광사업</ItemText>
+                            <Divider />
+                            <ItemText onClick={() => {navigate("/localEnterpriseInfo")}}>-지역기업분석정보</ItemText>
+                            <Divider />
+                            <ItemText onClick={() => {navigate("/enterpriseSupport")}}>-중소기업지원사업현황</ItemText>
                             <Divider />
                         </MenuContainer>
                         

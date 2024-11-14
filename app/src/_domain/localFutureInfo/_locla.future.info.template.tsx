@@ -68,17 +68,23 @@ function Template(): JSX.Element {
                         {/* 메뉴 영역 */}
                         <MenuContainer>
                             <MenuText>지역미래</MenuText>
+                            {/* <Box display='flex' justifyContent='center'>
+                                <DescContainer>
+                                    <span style={{ fontSize: '0.8rem', fontWeight: 'bold' }}>📝자녀교육 및 지원 정책</span>
+                                    <span>자녀 교육과 육아 지원을 위한 공공데이터 및 청소년 정책 정보를 제공해 육아 부담을 낮추고, 경력단절 여성의 재취업을 돕는 데이터를 활용해 경력 손실을 최소화하여 사회 복귀를 지원합니다.</span>
+                                </DescContainer>
+                            </Box> */}
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localFutureInfo")}}>-About지역미래</ItemText>
+                            <ItemText onClick={() => {navigate("/localFutureInfo")}}>
+                                <span>-</span>
+                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>About지역미래</span>
+                            </ItemText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/localEduProcess")}}>-지역인재교육과정</ItemText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/femaleSupport")}}>-경력단절여성취업지원</ItemText>
                             <Divider />
-                            <ItemText onClick={() => {navigate("/localEduInfo")}}>
-                                <span>-</span>
-                                <span style={{ color: '#4d65e1', textDecoration: 'underline' }}>내지역교육현황정보</span>
-                            </ItemText>
+                            <ItemText onClick={() => {navigate("/localEduInfo")}}>-내지역교육현황정보</ItemText>
                             <Divider />
                             <ItemText onClick={() => {navigate("/youthPolicy")}}>-청소년지원현황</ItemText>
                             <Divider />
@@ -86,7 +92,8 @@ function Template(): JSX.Element {
                         
                         {/* 콘텐츠 영역 */}
                         <ContentContainer>
-                            대충 콘텐츠 영역
+                            대충 콘텐츠 영역 
+                            
                         </ContentContainer>
                     </Box>
                 </ServiceContainer>
