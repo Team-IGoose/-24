@@ -92,12 +92,16 @@ function Header(): JSX.Element {
 
   return (
     <NavbarContainer>
-      <M.Top/>
+      <M.Top />
       <M.Type />
       <MenuContainer>
-        <M.Logo location={"강원특별자치도"} />
+        <M.Logo location={""} />
         {data.menu.map((menu, index) => (
-          <M.Menu key={index} menu={menu} onClick={() => handleMenuClick(index)} />
+          <M.Menu
+            key={index}
+            menu={menu}
+            onClick={() => handleMenuClick(index)}
+          />
         ))}
         <MenuIcon fontSize="large" sx={{ cursor: "pointer" }} />
       </MenuContainer>
@@ -106,5 +110,3 @@ function Header(): JSX.Element {
 }
 
 export default Header;
-
-
