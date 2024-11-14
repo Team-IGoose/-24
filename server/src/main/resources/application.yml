@@ -37,3 +37,6 @@ logging:
 openApi:
   serviceKey: 8XF02UiqBjMacUjtyAJt3BuzIPOJjO1MCdRSqeekt68l59GJY2unB1%2FFfl%2BQaP49h6fIN8aiNdIXnft2F3YT1w%3D%3D
 
+mybatis:
+  type-aliases-package: com.future24.server.future24.**.vo
+

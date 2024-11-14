@@ -1,3 +1,4 @@
+
 import { Box, Button } from "@mui/material";
 import O from "../component/organism/_index";
 import Subject from "../component/molecule/roadMap/subject/subject";
@@ -85,6 +86,7 @@ function Template(): JSX.Element {
             {index + 1}. {item.title}
           </Subject>
         ))}
+
       </Box>
       
 
@@ -96,6 +98,21 @@ function Template(): JSX.Element {
         universityData={universityData}
         handleCheckboxChange={handleCheckboxChange}
       />
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          border: "1px solid black",
+          height: "50vh",
+          justifyContent: "center",
+          alignItems: "center",
+          marginY: 2,
+        }}
+      >
+        <Typography variant="h4" color="black">로드맵 내용</Typography>
+        <Typography color="black">여기에 로드맵의 세부 내용이 표시됩니다.</Typography>
+      </Box>
 
       {/* 하단 페이지 네비게이션 */}
       <Box
@@ -110,6 +127,10 @@ function Template(): JSX.Element {
           이전
         </Button>
         <Button variant="outlined" color="primary" onClick={handleNext}>
+        <Button variant="outlined" color="primary">
+          이전
+        </Button>
+        <Button variant="outlined" color="primary">
           다음
         </Button>
       </Box>

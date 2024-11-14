@@ -1,6 +1,6 @@
 package com.future24.server.future24.univercity.mapper;
 
-import com.future24.server.future24.univercity.response.UniverseResponse;
+
 import com.future24.server.future24.univercity.vo.UnivercityVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -16,9 +16,4 @@ public interface UnivercityMapper {
             String startValue
     );
 
-    @Select("SELECT DISTINCT universe, collage, major FROM univercity " +
-            "WHERE universe LIKE #{startValue} || '%'")
-    List<UniverseResponse> findCollageByUniverse(
-            String startValue
-    );
 }

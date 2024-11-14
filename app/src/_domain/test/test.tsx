@@ -20,4 +20,11 @@ function Test(): JSX.Element {
   return <Button onClick={request}>test</Button>;
 }
 
+    await axios.get(
+      "http://localhost:8080/api/data?ability=R7000&workRgn=R3000"
+    );
+  }
+
+  return <Button onProgress={request}>test</Button>;
+}
 export default Test;

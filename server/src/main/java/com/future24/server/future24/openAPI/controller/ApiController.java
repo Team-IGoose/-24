@@ -16,9 +16,16 @@ public class ApiController {
     private final OpenApiService openApiService;
 
 
+    /**
+     * 공공기관 채용 정보 조회 api
+     * @param ability
+     * @param workRgn
+     * @param recrutSe
+     * @return
+     */
     @GetMapping("/api/data")
-    public ResponseEntity<String> getData(@RequestParam String ability, @RequestParam String workRgn) {
-        String result = openApiService.fetchData(ability, workRgn);
+    public ResponseEntity<String> getData(@RequestParam String ability, @RequestParam String workRgn, @RequestParam String recrutSe) {
+        String result = openApiService.fetchData(ability, workRgn, recrutSe);
         return ResponseEntity.ok(result);
     }
 }
