@@ -12,24 +12,7 @@ function Footer(): JSX.Element {
                 flexDirection: "column",
             }}
         >
-            {/* 콘텐츠 영역 */}
-            <Box sx={{ flex: 1 }}>
-                {/* 주요 콘텐츠 (스크롤을 적용하고자 하는 영역) */}
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column", // 세로 정렬
-                        padding: "2rem",
-                        gap: "1.5rem",
-                        overflowY: "auto", // 수직 스크롤 추가
-                    }}
-                >
-                    {/* 필요한 컨텐츠를 이곳에 추가 */}
-                    {/* <Typography sx={{ color: "#333", fontSize: "1rem" }}>
-                    </Typography> */}
-                    {/* 스크롤이 필요한 내용 추가 */}
-                </Box>
-            </Box>
+
 
             {/* 푸터 영역 */}
             <Box
